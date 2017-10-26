@@ -3,63 +3,42 @@
 The Jupyter Notebook
 ====================
 
-Introduction
+介绍
 ------------
 
-The notebook extends the console-based approach to interactive computing in
-a qualitatively new direction, providing a web-based application suitable for
-capturing the whole computation process: developing, documenting, and
-executing code, as well as communicating the results.  The Jupyter notebook
-combines two components:
+Notebook 扩展了控制台的交互计算功能，它提供了一个web应用程序来很方便的处理整个计算过程。这其中包括开发，记录，执行代码和生成结果。
+Jupyter notebook由两个构件组成：
 
-**A web application**: a browser-based tool for interactive authoring of
-documents which combine explanatory text, mathematics, computations and their
-rich media output.
+**一个web应用程序**: 一个基于浏览器的交互式文档编辑工具，它可以将说明性的文字，数学公式，计算过程和其他多媒体的资源有机的结合起来。
 
-**Notebook documents**: a representation of all content visible in the web
-application, including inputs and outputs of the computations, explanatory
-text, mathematics, images, and rich media representations of objects.
+**Notebook文档**: 它是web应用程序中所有可见内容背后对应的源文件。包括之前所说的文字，公式，多媒体资源等。
 
 .. seealso::
 
-    See the :ref:`installation guide <jupyter:install>` on how to install the
-    notebook and its dependencies.
+    看下 :ref:`安装向导 <jupyter:install>` 描述了如何安装notebook和它的相关依赖库.
 
 
-Main features of the web application
+Notebook的web应用的主要特性
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* In-browser editing for code, with automatic syntax highlighting,
-  indentation, and tab completion/introspection.
+* 在浏览器中编辑代码时，可以自动的代码染色，缩进，并且可以支持自动完成和内省。（试试Tab键）
 
-* The ability to execute code from the browser, with the results of
-  computations attached to the code which generated them.
+* 从浏览器执行代码的能力，当执行时将计算的结果附加在代码的后边。
 
-* Displaying the result of computation using rich media representations, such
-  as HTML, LaTeX, PNG, SVG, etc. For example, publication-quality figures
-  rendered by the matplotlib_ library, can be included inline.
+* 使用富媒体元素来显示计算的结果, 例如HTML, LaTeX, PNG, SVG, etc. 例如, 可以引用并使用 matplotlib_ 库来绘图。
 
-* In-browser editing for rich text using the Markdown_ markup language, which
-  can provide commentary for the code, is not limited to plain text.
+* 在浏览器编辑富文本时可以使用 Markdown_ 这种文本标记语言,他可以为代码提供注释和更加美观的行文结构，而不局限于纯文本。
 
-* The ability to easily include mathematical notation within markdown cells
-  using LaTeX, and rendered natively by MathJax_.
+* 可以使用LaTeX支持很容易的将复杂的数学公式放入markdown的元素中,使用 MathJax_ 来渲染.
 
 
 
 .. _MathJax: https://www.mathjax.org/
 
 
-Notebook documents
+Notebook文档
 ~~~~~~~~~~~~~~~~~~
-Notebook documents contains the inputs and outputs of a interactive session as
-well as additional text that accompanies the code but is not meant for
-execution.  In this way, notebook files can serve as a complete computational
-record of a session, interleaving executable code with explanatory text,
-mathematics, and rich representations of resulting objects. These documents
-are internally JSON_ files and are saved with the ``.ipynb`` extension. Since
-JSON is a plain text format, they can be version-controlled and shared with
-colleagues.
+Notebook文档包含交互式会话的输入输出，还有一些用来说明代码的文本（它们并不需要被执行）。以这种方式, notebook文件可以成为一个会话的完整信息记录,将可执行代码和解释性文本、数学公式、富媒体元素混排,这些文件的内在是 JSON_ 文件并被存储为 ``.ipynb`` 格式。因为JSON是纯文本格式，所以Notebook文档可以通过版本控制工具管理并和同事分享。
 
 .. _JSON: https://en.wikipedia.org/wiki/JSON
 
