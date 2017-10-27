@@ -25,11 +25,11 @@ Notebook的web应用的主要特性
 
 * 从浏览器执行代码的能力，当执行时将计算的结果附加在代码的后边。
 
-* 使用富媒体元素来显示计算的结果, 例如HTML, LaTeX, PNG, SVG, etc. 例如, 可以引用并使用 matplotlib_ 库来绘图。
+* 使用富媒体元素来显示计算的结果，例如HTML，LaTeX，PNG，SVG等等. 例如，可以引用并使用 matplotlib_ 库来绘图。
 
-* 在浏览器编辑富文本时可以使用 Markdown_ 这种文本标记语言,他可以为代码提供注释和更加美观的行文结构，而不局限于纯文本。
+* 在浏览器编辑富文本时可以使用 Markdown_ 这种文本标记语言，他可以为代码提供注释和更加美观的行文结构，而不局限于纯文本。
 
-* 可以使用LaTeX支持很容易的将复杂的数学公式放入markdown的元素中,使用 MathJax_ 来渲染.
+* 可以使用LaTeX支持很容易的将复杂的数学公式放入markdown的元素中，使用 MathJax_ 来渲染。
 
 
 
@@ -38,59 +38,37 @@ Notebook的web应用的主要特性
 
 Notebook文档
 ~~~~~~~~~~~~~~~~~~
-Notebook文档包含交互式会话的输入输出，还有一些用来说明代码的文本（它们并不需要被执行）。以这种方式, notebook文件可以成为一个会话的完整信息记录,将可执行代码和解释性文本、数学公式、富媒体元素混排,这些文件的内在是 JSON_ 文件并被存储为 ``.ipynb`` 格式。因为JSON是纯文本格式，所以Notebook文档可以通过版本控制工具管理并和同事分享。
+Notebook文档包含交互式会话的输入输出，还有一些用来说明代码的文本（它们并不需要被执行）。以这种方式，notebook文件可以成为一个会话的完整信息记录，将可执行代码和解释性文本、数学公式、富媒体元素混排，这些文件的内在是 JSON_ 文件并被存储为 ``.ipynb`` 格式。因为JSON是纯文本格式，所以Notebook文档可以通过版本控制工具管理并和同事分享。
 
 .. _JSON: https://en.wikipedia.org/wiki/JSON
 
-Notebooks may be exported to a range of static formats, including HTML (for
-example, for blog posts), reStructuredText, LaTeX, PDF, and slide shows, via
-the nbconvert_ command.
+通过使用 nbconvert_ 命令，Notebooks可以被输出为多种静态格式，这其中包括HTML(例如博客)，reStructuredText，LaTeX，PDF，还有幻灯。
 
-Furthermore, any  ``.ipynb`` notebook document available from a public
-URL can be shared via the `Jupyter Notebook Viewer <nbviewer>`_ (nbviewer_).
-This service loads the notebook document from the URL and renders it as a
-static web page.  The results may thus be shared with a colleague, or as a
-public blog post, without other users needing to install the Jupyter notebook
-themselves.  In effect, nbviewer_ is simply nbconvert_ as
-a web service, so you can do your own static conversions with nbconvert,
-without relying on nbviewer.
+此外，任何 ``.ipynb`` 后缀的notebook文档可以通过 `Jupyter Notebook Viewer <nbviewer>`_ (nbviewer_)分享成为一条开放的URL链接。这个服务可以从URL读取notebook文档并将它转化为一个静态的web页面。这样的结果可以用来和同事分享，或者作为一个博客，来提供给那些并没有安装Jupyter notebook需求的人们。事实上， nbviewer_ 作为一个web服务是一个简化的 nbconvert_ ，因此你可以通过nbconvert做你自己想要的静态转换，而不是必须要依赖于nbviewer.
 
 
 
 .. seealso::
 
-    :ref:`Details on the notebook JSON file format <nbformat:notebook_file_format>`
+    :ref:`详细介绍了notebook JSON的文件格式 <nbformat:notebook_file_format>`
 
 
-Starting the notebook server
+开启notebook服务
 ----------------------------
 
-You can start running a notebook server from the command line using the
-following command::
+你可以通过以下的命令开启一个notebook服务::
 
     jupyter notebook
 
-This will print some information about the notebook server in your console,
-and open a web browser to the URL of the web application (by default,
-``http://127.0.0.1:8888``).
+这将在你的控制台上打印出一些关于notebook服务的信息，随后会通过你的浏览器自动打开该web应用的URL(默认是 ``http://127.0.0.1:8888``)。
 
-The landing page of the Jupyter notebook web application, the **dashboard**,
-shows the notebooks currently available in the notebook directory (by default,
-the directory from which the notebook server was started).
+Jupyter notebook的web应用主页是 **仪表盘** ，它列出了当前可用的notebook路径下所有的notebooks(默认状态下，这个路径是notebook启动时执行命令所在的路径)。
 
-You can create new notebooks from the dashboard with the ``New Notebook``
-button, or open existing ones by clicking on their name.  You can also drag
-and drop ``.ipynb`` notebooks and standard ``.py`` Python source code files
-into the notebook list area.
+你可以通过点击 ``New Notebook`` 按钮来从仪表盘创建一个新的notebooks，或者通过点击一个notebooks的名字来打开它。你也可以拖放 ``.ipynb`` notebooks 或者标准的 ``.py`` Python源代码文件到notebook的列表中。
 
-When starting a notebook server from the command line, you can also open a
-particular notebook directly, bypassing the dashboard, with ``jupyter notebook
-my_notebook.ipynb``. The ``.ipynb`` extension is assumed if no extension is
-given.
+当从命令行启动了一个notebook服务，你也可以直接打开一个特殊的notebook，通过仪表盘上的 ``jupyter notebook my_notebook.ipynb`` 。 如果没给出扩展名那么就使用 ``.ipynb`` 作为扩展名。
 
-When you are inside an open notebook, the `File | Open...` menu option will
-open the dashboard in a new browser tab, to allow you to open another notebook
-from the notebook directory or to create a new notebook.
+当你正在编辑一个打开的notebook时， `File | Open...` 菜单选项将会在浏览器的新标签页打开仪表盘，这允许你从notebook路径打开一个另外的notebook文件或是创建一个新的notebook。
 
 
 .. note::
