@@ -73,46 +73,25 @@ Jupyter notebook的web应用主页是 **仪表盘** ，它列出了当前可用�
 
 .. note::
 
-   You can start more than one notebook server at the same time, if you want
-   to work on notebooks in different directories.  By default the first
-   notebook server starts on port 8888, and later notebook servers search for
-   ports near that one.  You can also manually specify the port with the
-   ``--port`` option.
+   如果你想在不同路径上的notebooks上工作，你可以同一时间开启多个notebook服务。默认的，notebook服务第一次启动在8888端口，之后再启动notebook服务，它会找寻邻近的端口。当然，你也可以通过 ``--port`` 手动配置端口。
 
-Creating a new notebook document
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+创建一个新的notebook文档
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-A new notebook may be created at any time, either from the dashboard, or using
-the :menuselection:`File --> New` menu option from within an active notebook.
-The new notebook is created within the same directory and will open in a new
-browser tab. It will also be reflected as a new entry in the notebook list on
-the dashboard.
+一个新的notebook可以在任何时间被创建出来，既可以通过仪表盘，也可以使用一个活动的notebook中的 :menuselection:`File --> New` 菜单来创建。新的notebook创建在一个相同的路径，之后在浏览器的新标签页被打开。它也可以被当做仪表盘notebook列表的一个新入口。
 
 .. image:: _static/images/new-notebook.gif
 
 
-Opening notebooks
-~~~~~~~~~~~~~~~~~
-An open notebook has **exactly one** interactive session connected to a
-kernel, which will execute code sent by the user
-and communicate back results.  This kernel remains active if the web browser
-window is closed, and reopening the same notebook from the dashboard will
-reconnect the web application to the same kernel. In the dashboard, notebooks
-with an active kernel have a ``Shutdown`` button next to them, whereas
-notebooks without an active kernel have a ``Delete`` button in its place.
+打开notebooks
+~~~~~~~~~~~~~
+一个打开的notebook拥有 **确切的** 连接到内核的交互式会话，它可以执行用户发送的代码并返回结果。即使浏览器窗口被关闭了，内核仍然会保持活动状态，可以通过重新在仪表盘中打开相同的notebook来重新将web应用链接到之前的内核。在仪表盘中，拥有活动内核的notebooks会有 ``Shutdown`` 按钮，而没有活动内核的则会显示 ``Delete`` 按钮取而代之。
 
-Other clients may connect to the same kernel.
-When each kernel is started, the notebook server prints to the terminal a
-message like this::
+其它的客户端可能连接到相同的内核。当一个内核启动之后，notebook服务打印到终端类似如下的信息::
 
     [NotebookApp] Kernel started: 87f7d2c0-13e3-43df-8bb8-1bd37aaf3373
 
-This long string is the kernel's ID which is sufficient for getting the
-information necessary to connect to the kernel. If the notebook uses the IPython
-kernel, you can also see this
-connection data by running the ``%connect_info`` :ref:`magic
-<magics_explained>`, which will print the same ID information along with other
-details.
+这个长字符串是kernel的ID，这对于拿到链接到内核的必要信息来说已经足够了。如果notebook使用Ipython内核，你也可以通过运行 ``%connect_info`` :ref:`magic <magics_explained>` 来看到连接信息，这在打印相同的ID信息的同时也会打印其它细节。
 
 You can then, for example, manually start a Qt console connected to the *same*
 kernel from the command line, by passing a portion of the ID::
