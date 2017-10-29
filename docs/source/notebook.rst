@@ -93,15 +93,13 @@ Jupyter notebook的web应用主页是 **仪表盘** ，它列出了当前可用�
 
 这个长字符串是kernel的ID，这对于拿到链接到内核的必要信息来说已经足够了。如果notebook使用Ipython内核，你也可以通过运行 ``%connect_info`` :ref:`magic <magics_explained>` 来看到连接信息，这在打印相同的ID信息的同时也会打印其它细节。
 
-You can then, for example, manually start a Qt console connected to the *same*
-kernel from the command line, by passing a portion of the ID::
+你可以通过命令行手动开启Qt控制台，这样可以在参数上加上部分ID来链接到 *你想要的* 内核。
 
     $ jupyter qtconsole --existing 87f7d2c0
 
-Without an ID, ``--existing`` will  connect to the most recently
-started kernel.
+如果没有给出ID，那么 ``--existing`` 参数将会链接到上一个打开的内核。
 
-With the IPython kernel, you can also run the ``%qtconsole``
+如果在使用IPython内核，你也可以在notebook中运行 ``%qtconsole`` 命令，从而打开Qt控制台来链接指定的内核。
 :ref:`magic <magics_explained>` in the notebook to open a Qt console connected
 to the same kernel.
 
@@ -109,36 +107,22 @@ to the same kernel.
 
     :ref:`ipythonzmq`
 
-Notebook user interface
------------------------
+Notebook的用户接口
+------------------
 
-When you create a new notebook document, you will be presented with the
-**notebook name**, a **menu bar**, a **toolbar** and an empty **code
-cell**.
+当你创建一个新的notebook文档后，你将得到一个 **notebook名称**, 一个 **菜单栏**, 一个 **工具栏** 和一个空的 **代码单元** 。
 
-**notebook name**: The name of the notebook document is displayed at the top
-of the page, next to the ``IP[y]: Notebook`` logo. This name reflects the name
-of the ``.ipynb`` notebook document file.  Clicking on the notebook name
-brings up a dialog which allows you to rename it. Thus, renaming a notebook
-from "Untitled0" to "My first notebook" in the browser, renames the
-``Untitled0.ipynb`` file to ``My first notebook.ipynb``.
+**notebook名称**: notebook文档的名称被显示在页面的顶端，挨着 ``IP[y]: Notebook`` 的logo。这个名字指向了后缀名为 ``.ipynb`` 的notebook文档。当你点击这个notebook的名字后，会弹出一个对话框来允许你进行重命名。举个例子，在浏览器里重命名一个notebook从"Untitled0"到"My first notebook"，这个操作将会使文件从 ``Untitled0.ipynb`` 变为 ``My first notebook.ipynb`` 。
 
-**menu bar**: The menu bar presents different options that may be used to
-manipulate the way the notebook functions.
+**菜单栏**: 菜单栏提供了不同的选项，可以用来操作notebook的功能。
 
-**toolbar**: The tool bar gives a quick way of performing the most-used
-operations within the notebook, by clicking on an icon.
+**工具栏**: 工具栏给出一种快捷的方式，可以通过点击图标来使用经常被使用到的那些操作。
 
-**code cell**: the default type of cell, read on for an explanation of cells
+**代码单元**: 默认的单元格类型，你可以从单元格的描述中得到更多的解释。
 
 .. note::
 
-    As of notebook version 4.1, the user interface allows for multiple cells to
-    be selected.  The ``quick celltype selector``, found in the menubar, will
-    display a dash ``-`` when multiple cells are selected to indicate that the
-    type of the cells in the selection might not be unique. The quick selector
-    can still be used to change the type of the selection and will change the
-    type of all the currently selected cells.
+    当使用notebook4.1版本时，用户接口允许多个单元格被选中。从菜单栏找到 ``quick celltype selector``，当多个单元格被选中，而显示 ``-`` ，这表明选择的多个单元格的类型可能不一致。此时此刻，快速选择器仍然可以改变所有当前被选中的单元格的类型。
 
 
 Structure of a notebook document
