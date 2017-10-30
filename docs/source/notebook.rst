@@ -125,21 +125,12 @@ Notebook的用户接口
     当使用notebook4.1版本时，用户接口允许多个单元格被选中。从菜单栏找到 ``quick celltype selector``，当多个单元格被选中，而显示 ``-`` ，这表明选择的多个单元格的类型可能不一致。此时此刻，快速选择器仍然可以改变所有当前被选中的单元格的类型。
 
 
-Structure of a notebook document
---------------------------------
+notebook的文件结构
+------------------
 
-The notebook consists of a sequence of cells.  A cell is a multiline text input
-field, and its contents can be executed by using :kbd:`Shift-Enter`, or by
-clicking either the "Play" button the toolbar, or `Cell | Run` in the menu bar.
-The execution behavior of a cell is determined by the cell's type.  There are three
-types of cells: **code cells**, **markdown cells**, and **raw cells**.  Every
-cell starts off being a **code cell**, but its type can be changed by using a
-drop-down on the toolbar (which will be "Code", initially), or via
-:ref:`keyboard shortcuts <keyboard-shortcuts>`.
+notebook由一些列的子单元构成。一个子单元是一个多行文本的输入域，它所包含的内容可以通过 :kbd:`Shift-Enter` 或点击工具栏上的“Play”按钮或菜单栏的 `Cell | Run` 来执行。一个子单元的执行方式由子单元的类型来决定。我们有三种子单元的类型: **code cells** ， **markdown cells** ，和 **raw cells** 。子单元初始是 **code cell** ，但是它的类型可以通过工具栏上的下拉菜单或是快捷键 :ref:`keyboard shortcuts <keyboard-shortcuts>` 来改变。
 
-For more information on the different things you can do in a notebook,
-see the `collection of examples
-<http://nbviewer.jupyter.org/github/jupyter/notebook/tree/master/docs/source/examples/Notebook/>`_.
+想要获取更多信息，请看这里 `集合的例子 <http://nbviewer.jupyter.org/github/jupyter/notebook/tree/master/docs/source/examples/Notebook/>`_ 。
 
 Code cells
 ~~~~~~~~~~
