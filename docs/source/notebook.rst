@@ -132,39 +132,21 @@ notebook由一些列的子单元构成。一个子单元是一个多行文本的
 
 想要获取更多信息，请看这里 `集合的例子 <http://nbviewer.jupyter.org/github/jupyter/notebook/tree/master/docs/source/examples/Notebook/>`_ 。
 
-Code cells
-~~~~~~~~~~
-A *code cell* allows you to edit and write new code, with full syntax
-highlighting and tab completion. By default, the language associated to a code
-cell is Python, but other languages, such as ``Julia`` and ``R``, can be
-handled using :ref:`cell magic commands <magics_explained>`.
+代码单元
+~~~~~~~~
+一个 *代码单元* 允许你在代码染色和自动完成的帮助下编辑或写入新的代码。代码单元的默认语言是Python，但也可以切换为 ``Julia`` 和 ``R`` 语言，通过使用 :ref:`cell magic commands <magics_explained>` 来进行切换。
 
-When a code cell is executed, code that it contains is sent to the kernel
-associated with the notebook.  The results that are returned from this
-computation  are then displayed in the notebook as the cell's *output*. The
-output is not limited to text, with many other possible forms of output are
-also possible, including ``matplotlib`` figures and HTML tables (as used, for
-example, in the ``pandas`` data analysis package). This is known as IPython's
-*rich display* capability.
+当你执行代码单元时，它所包含的代码被notebook发送到内核。返回的计算结果被作为单元的 *output* ，显示在notebook中。该输出不局限于文本，还有很多其他的输出类型，其中包括 ``matplotlib`` 图标和HTML标签(举个常用的例子，比如在 ``pandas`` 数据分析的扩展包中)。这些是已知的IPython的 *多媒体显示* 能力。
 
 .. seealso::
 
-   `Rich Output`_  example notebook
+   `Rich Output`_  notebook的例子
 
-Markdown cells
-~~~~~~~~~~~~~~
-You can document the computational process in a literate way, alternating
-descriptive text with code, using *rich text*. In IPython this is accomplished
-by marking up text with the Markdown language. The corresponding cells are
-called *Markdown cells*. The Markdown language provides a simple way to
-perform this text markup, that is, to specify which parts of the text should
-be emphasized (italics), bold, form lists, etc.
+Markdown单元
+~~~~~~~~~~~~
+你可以用一种更好的方式将计算过程书写为文档，从而使描述文本和代码交互结合，这种方式就是使用 *富文本* ，在IPython中，这是通过Markdown这种文本标记语言来实现的。此时相应的单元被叫做 *Markdown单元* 。Markdown语言提供了一种简单的方式去实现这种标记，比如强调（斜体），着重，列表等。
 
-If you want to provide structure for your document, you can use markdown
-headings. Markdown headings consist of 1 to 6 hash # signs ``#`` followed by a
-space and the title of your section. The markdown heading will be converted
-to a clickable link for a section of the notebook. It is also used as a hint
-when exporting to other document formats, like PDF.
+如果你想为你的文档添加结构，你可以使用markdown的标题。Markdown标题包含1到6个#标记 ``#`` 在你标题句的首尾。markdown的标题将被转换为notebook章节中的一种可以电机的链接。当导出为PDF这类文档时它也可以被用作是一种提示。
 
 When a Markdown cell is executed, the Markdown code is converted into
 the corresponding formatted rich text. Markdown allows arbitrary HTML code for
