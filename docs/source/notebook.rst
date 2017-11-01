@@ -148,44 +148,27 @@ Markdown单元
 
 如果你想为你的文档添加结构，你可以使用markdown的标题。Markdown标题包含1到6个#标记 ``#`` 在你标题句的首尾。markdown的标题将被转换为notebook章节中的一种可以电机的链接。当导出为PDF这类文档时它也可以被用作是一种提示。
 
-When a Markdown cell is executed, the Markdown code is converted into
-the corresponding formatted rich text. Markdown allows arbitrary HTML code for
-formatting.
+当Markdown单元被执行，Markdown代码会被转化为相应格式的富文本。Markdown支持HTML代码格式。
 
-Within Markdown cells, you can also include *mathematics* in a straightforward
-way, using standard LaTeX notation: ``$...$`` for inline mathematics and
-``$$...$$`` for displayed mathematics. When the Markdown cell is executed,
-the LaTeX portions are automatically rendered in the HTML output as equations
-with high quality typography. This is made possible by MathJax_, which
-supports a `large subset <mathjax_tex>`_ of LaTeX functionality
+在Markdown单元中，你可以使用标准LaTeX符号来书写 *数学公式* ： ``$...$`` 用来内联数学公式，
+``$$...$$`` 用来显示数学公式。 当Markdown单元被执行，LaTeX部分会被自动渲染为HTML格式，并输出为高质量印刷格式。这些通过 MathJax_ 来实现，它支持LaTeX的功能性 `大子集 <mathjax_tex>`_ 。
 
 .. _mathjax_tex: http://docs.mathjax.org/en/latest/tex.html
 
-Standard mathematics environments defined by LaTeX and AMS-LaTeX (the
-`amsmath` package) also work, such as
-``\begin{equation}...\end{equation}``, and ``\begin{align}...\end{align}``.
-New LaTeX macros may be defined using standard methods,
-such as ``\newcommand``, by placing them anywhere *between math delimiters* in
-a Markdown cell. These definitions are then available throughout the rest of
-the IPython session.
+标准的数学环境定义为LaTeX，AMS-LaTeX (使用 `amsmath` 扩展包)也可以，例如 ``\begin{equation}...\end{equation}`` 和  ``\begin{align}...\end{align}`` 。新的LaTeX可以使用标准模式来定义，例如 ``\newcommand`` ，只需要将它们放置在Markdown单元中任何位置的两个 *数学分隔符之间* 。这些定义可以在IPython的其它会话中使用。
 
 .. seealso::
 
-    `Working with Markdown Cells`_ example notebook
+    `Working with Markdown Cells`_ notebook例子
 
-Raw cells
-~~~~~~~~~
+Raw单元
+~~~~~~~
 
-*Raw* cells provide a place in which you can write *output* directly.
-Raw cells are not evaluated by the notebook.
-When passed through nbconvert_, raw cells arrive in the
-destination format unmodified. For example, this allows you to type full LaTeX
-into a raw cell, which will only be rendered by LaTeX after conversion by
-nbconvert.
+*Raw* 单元可以让你直接写 *输出* 。Raw 单元不会被notebook处理。当经过 nbconvert_ 处理，raw单元直接达到目的格式而未经过修改。举个例子，这种方式允许你在raw单元中键入完整的LaTeX，而不用担心它被nbconvert转化。
 
 
-Basic workflow
---------------
+基本的工作流
+------------
 
 The normal workflow in a notebook is, then, quite similar to a standard
 IPython session, with the difference that you can edit cells in-place multiple
