@@ -170,73 +170,41 @@ Raw单元
 基本的工作流
 ------------
 
-The normal workflow in a notebook is, then, quite similar to a standard
-IPython session, with the difference that you can edit cells in-place multiple
-times until you obtain the desired results, rather than having to
-rerun separate scripts with the ``%run`` magic command.
+notebook中的正常工作流与标准IPython的会话非常相似，不同之处在于你可以对同一单元格进行多次编辑，直到你得到想要的结果，而不需要使用 ``%run`` 命令来重新运行脚本。
 
 
-Typically, you will work on a computational problem in pieces, organizing
-related ideas into cells and moving forward once previous parts work
-correctly. This is much more convenient for interactive exploration than
-breaking up a computation into scripts that must be executed together, as was
-previously necessary, especially if parts of them take a long time to run.
+通常情况下，你可以将准备计算的问题分解，把相关的想法组织到单元格中，直到这部分正确工作了再进行下一步。这对于交互式探索来说比将计算分解为必须一起执行的脚本来说要方便许多。拆分脚本在以前是很有必要的，特别是如果某一部分会执行很长时间的情况。
 
-At certain moments, it may be necessary to interrupt a calculation which is
-taking too long to complete. This may be done with the `Kernel | Interrupt`
-menu option, or the :kbd:`Ctrl-m i` keyboard shortcut.
-Similarly, it may be necessary or desirable to restart the whole computational
-process, with the `Kernel | Restart` menu option or :kbd:`Ctrl-m .`
-shortcut.
+在某些时候，可能有必要中断一个耗时过长的计算。这可以用 `Kernel | Interrupt` 菜单或 :kbd:`Ctrl-m i` 快捷键来完成操作。同样的，也可以通过 `Kernel | Restart` 或者 :kbd:`Ctrl-m .` 来重启整个计算过程。
 
-A notebook may be downloaded in either a ``.ipynb`` or ``.py`` file from the
-menu option `File | Download as`. Choosing the ``.py`` option downloads a
-Python ``.py`` script, in which all rich output has been removed and the
-content of markdown cells have been inserted as comments.
+执行菜单选项 `File | Download as` 可以将notebook下载为 ``.ipynb`` 或 ``.py`` 文件。如果选择 ``.py`` 选项下载Python ``.py`` 脚本，它将会移除所有的多媒体输出并且将markdown单元格的内容转化为注释插入进来。
 
 .. seealso::
 
-    `Running Code in the Jupyter Notebook`_ example notebook
+    `Running Code in the Jupyter Notebook`_ notebook例子
 
-    `Notebook Basics`_ example notebook
+    `Notebook Basics`_ notebook例子
 
 .. _keyboard-shortcuts:
 
-Keyboard shortcuts
-~~~~~~~~~~~~~~~~~~
-All actions in the notebook can be performed with the mouse, but keyboard
-shortcuts are also available for the most common ones. The essential shortcuts
-to remember are the following:
+键盘快捷键
+~~~~~~~~~~
+notebook中所有的操作都可以使用鼠标执行，但键盘快捷键也可用于最常见的操作。以下是常见的几种需要记忆的快捷键：
 
-* :kbd:`Shift-Enter`:  run cell
-    Execute the current cell, show output (if any), and jump to the next cell
-    below. If :kbd:`Shift-Enter` is invoked on the last cell, a new code
-    cell will also be created. Note that in the notebook, typing :kbd:`Enter`
-    on its own *never* forces execution, but rather just inserts a new line in
-    the current cell. :kbd:`Shift-Enter` is equivalent to clicking the
-    ``Cell | Run`` menu item.
+* :kbd:`Shift-Enter`: 执行单元格
+    执行当前单元格，如果有输出则将其显示，然后跳转到下一个单元格。如果在最后一个单元格上调用 :kbd:`Shift-Enter` ，则还会创建一个新的代码单元格。需要注意的是，在notebook中，自己输入 :kbd:`Enter` *从不* 强制执行，它只会在当前单元格中插入新的行。:kbd:`Shift-Enter` 相当于点击 ``Cell | Run`` 菜单项。
 
-* :kbd:`Ctrl-Enter`: run cell in-place
-    Execute the current cell as if it were in "terminal mode", where any
-    output is shown, but the cursor *remains* in the current cell. The cell's
-    entire contents are selected after execution, so you can just start typing
-    and only the new input will be in the cell. This is convenient for doing
-    quick experiments in place, or for querying things like filesystem
-    content, without needing to create additional cells that you may not want
-    to be saved in the notebook.
+* :kbd:`Ctrl-Enter`: 原地执行单元格
+    像在“终端”模式中执行当前单元格一样，显示所有输出，但光标还 *停留* 在当前单元格中。单元格的全部内容在执行后被选中，此时你再键入新的内容的话老内容将被清除。这对于进行快速实验或查询诸如文件系统一类的操作是很方便的，用完就扔掉。
 
-* :kbd:`Alt-Enter`: run cell, insert below
-    Executes the current cell, shows the output, and inserts a *new*
-    cell between the current cell and the cell below (if one exists). This
-    is thus a shortcut for the sequence :kbd:`Shift-Enter`, :kbd:`Ctrl-m a`.
-    (:kbd:`Ctrl-m a` adds a new cell above the current one.)
+* :kbd:`Alt-Enter`: 执行单元格，并在之后插入
+    执行当前单元格，显示输出，并且插入一个 *新的* 单元格在当前的单元格和下一个单元格（如果存在的话）之间。这是序列的快捷键 :kbd:`Shift-Enter` ，:kbd:`Ctrl-m a` 。（:kbd:`Ctrl-m a` 添加一个新的单元格在当前单元格之前。）
 
-* :kbd:`Esc` and :kbd:`Enter`: Command mode and edit mode
-    In command mode, you can easily navigate around the notebook using keyboard
-    shortcuts. In edit mode, you can edit text in cells.
+* :kbd:`Esc` 和 :kbd:`Enter`: 命令模式和编辑模式
+    在命令模式下，你可以使用键盘快捷键轻松浏览notebook。
+    在编辑模式下，你可以编辑单元格文本。
 
-For the full list of available shortcuts, click :guilabel:`Help`,
-:guilabel:`Keyboard Shortcuts` in the notebook menus.
+想获得全部的可用快捷键列表，请在notebook菜单中点击 :guilabel:`Help` ，:guilabel:`Keyboard Shortcuts` 。
 
 Plotting
 --------
